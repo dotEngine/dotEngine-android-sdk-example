@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/mac/.android/build-cache/5dd7304c8f4ac2ec277dada2a4f6af0ad0208d30/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="42745bba6f45e895a916fb52db086b31d1f825e7">
+        <dex dex="/Users/mac/WorkSpace/Android2/HuDongLive/app/build/intermediates/pre-dexed/debug/classes_c3947ad7950f136a32efd1f7c5773d6d33b6f693.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mac/.android/build-cache/f1bdbc853542daf74d1b7e79f709e2616336e552/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
+        <dex dex="/Users/mac/WorkSpace/Android2/HuDongLive/app/build/intermediates/pre-dexed/debug/classes_5b3065400d1840284a8c4a5d6c072fa4d3e1314d.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mac/.android/build-cache/500b19b8884cbdf3b7cae9a540737aa5d9015279/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c0b17186df89f7ba22021d1b057f0eb97bdd20b9">
+        <dex dex="/Users/mac/WorkSpace/Android2/HuDongLive/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_3867a6c644ce820a066e67c11d8145368f3be735/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mac/WorkSpace/Android2/HuDongLive/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="460319ed67c99f77622256172ffd43ddcaac19b5">
+        <dex dex="/Users/mac/WorkSpace/Android2/HuDongLive/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_f0246f87dcaeff4e9a45edfa64123da68148d437/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mac/.android/build-cache/a615915aa37650d53f8ef7abe1a2449e82e92c28/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5a5cbc42192d2afde319e4babe59bf8e41a49d35">
+        <dex dex="/Users/mac/WorkSpace/Android2/HuDongLive/app/build/intermediates/pre-dexed/debug/classes_9dd407a087a1b97664dcd4081898d132118bcaee.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mac/.gradle/caches/modules-2/files-2.1/com.jakewharton/butterknife-annotations/8.5.1/bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc/butterknife-annotations-8.5.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
+        <dex dex="/Users/mac/WorkSpace/Android2/HuDongLive/app/build/intermediates/pre-dexed/debug/butterknife-annotations-8.5.1_74bb2ad0b024aaa8dd42bb21d0ad809902e3da88.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mac/.android/build-cache/1525549cb9246376f211ea080ae9470d1d30488a/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8531f2d46b35de75e6130f25830e0c2c0d6bb98c">
+        <dex dex="/Users/mac/WorkSpace/Android2/HuDongLive/app/build/intermediates/pre-dexed/debug/classes_394306610143a628c8acdd82753cd6f653da52d2.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mac/WorkSpace/Android2/HuDongLive/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="/Users/mac/WorkSpace/Android2/HuDongLive/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_e5931b7b65b73b95b66dcd53022728ae68bee758/classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mac/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.11.0/840897fcd7223a8143f1d9b6f69714e7be34fd50/okio-1.11.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="840897fcd7223a8143f1d9b6f69714e7be34fd50">
+        <dex dex="/Users/mac/WorkSpace/Android2/HuDongLive/app/build/intermediates/pre-dexed/debug/okio-1.11.0_328ba32a9783dfc463cf35786fd5835aded7ec71.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mac/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.5.0/4b0bb6bfbecbdd42b97ff400af342bfe7f32bc83/okhttp-3.5.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4b0bb6bfbecbdd42b97ff400af342bfe7f32bc83">
+        <dex dex="/Users/mac/WorkSpace/Android2/HuDongLive/app/build/intermediates/pre-dexed/debug/okhttp-3.5.0_d5b5e72fa81ce3b137fe6a5074b01a344cba2fc6.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mac/.android/build-cache/c74fb9e8922a8cd250d7c09abd4e5bf3b04c2c18/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5fd783797a78241dda49ef4d2c8e1f3c0bccad89">
+        <dex dex="/Users/mac/WorkSpace/Android2/HuDongLive/app/build/intermediates/pre-dexed/debug/classes_1ac7f8ad9f6cac0e3eae118333e31009239f42c4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mac/.android/build-cache/fbfdde508550928db153a5979d29d0a195595c75/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9715585867480e9916e0ce284ac52697678afe4c">
+        <dex dex="/Users/mac/WorkSpace/Android2/HuDongLive/app/build/intermediates/pre-dexed/debug/classes_9f30687f6b9b3d37ddeba732fc29a43df6d73720.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/mac/.android/build-cache/3cbec21c9017dd3bf9ecbdc825b3b80b5d15254e/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="/Users/mac/WorkSpace/Android2/HuDongLive/app/build/intermediates/pre-dexed/debug/classes_5ce9dfab070d9f7b4019954c3733b94d6618a131.jar" />
+    </item>
+
+</items>
