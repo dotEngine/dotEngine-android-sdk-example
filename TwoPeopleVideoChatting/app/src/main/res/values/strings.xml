@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TwoPeopleVideo</string>
+
+    <string-array name="function">
+        <item>反转摄像头</item>
+        <item>打开/关闭 声音 </item>
+        <item>打开/关闭 视频</item>
+        <item>听筒/扬声器</item>
+        <item>离开房间</item>
+    </string-array>
+
+</resources>

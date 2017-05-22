@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/mac/.android/build-cache/bbc4d02f53f44990cbe69100739c2ee77168bd04/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ee325fde66626be6dbb20b13a9106075d74e3abc">
+        <dex dex="/Users/mac/WorkSpace/DotEngine/TwoPeopleVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_cc11493a6a96736fd192e89e5acbc6e4e5d0e406/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mac/WorkSpace/DotEngine/TwoPeopleVideo/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="/Users/mac/WorkSpace/DotEngine/TwoPeopleVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_e22808580a4375741d3205fc5b84f068aca961ce/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mac/WorkSpace/DotEngine/TwoPeopleVideo/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5eb50715ec3cca88ed79067457b356f7ecde1f1c">
+        <dex dex="/Users/mac/WorkSpace/DotEngine/TwoPeopleVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_21201d218530189f157ac6cc79237744162a3703/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/mac/.android/build-cache/cf0bd3e8d3ffce20d1df62dc016d71b235653135/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="97a86524e0785eaf68e99d38de168a8bafd61d62">
+        <dex dex="/Users/mac/WorkSpace/DotEngine/TwoPeopleVideo/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_bd2230145472ed9bf2000500ee03d935ac4b5f99/classes.dex" />
+    </item>
+
+</items>

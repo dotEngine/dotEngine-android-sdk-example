@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.dotengine.linsir.twopeoplevideo.MainActivity"
+    >
+
+    <com.beardedhen.androidbootstrap.BootstrapEditText
+        android:id="@+id/input_room_name"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="150dp"
+        android:hint="请输入房间名"
+        app:bootstrapBrand="info"
+        app:bootstrapSize="md"
+        />
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/join_room"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="100dp"
+        android:text="进入房间啊"
+        app:bootstrapBrand="success"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:roundedCorners="true"
+        app:showOutline="false"
+        />
+
+
+</LinearLayout>
