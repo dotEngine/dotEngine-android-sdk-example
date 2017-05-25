@@ -4,7 +4,7 @@
 
 
 - 时时音视频
-    - [HuDongLive](／HuDongLive)——互动直播软件，具有主播、连麦、游客等功能
+    - [HuDongLive](/HuDongLive)——互动直播软件，具有主播、连麦、游客等功能
     - [TwoPeopleVideoChatting](/TwoPeopleVideoChatting)——1对1聊天室功能
     
 - 时时音频功能
