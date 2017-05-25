@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="70dp"
+              android:layout_height="70dp">
+
+
+
+    <ImageView
+        android:id="@+id/user"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+
+    <ImageView
+        android:id="@+id/talking"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="#18d60a"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        />
+
+
+
+
+
+
+</RelativeLayout>
+
