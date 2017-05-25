@@ -8,5 +8,5 @@
     - [TwoPeopleVideoChatting](/TwoPeopleVideoChatting)——1对1聊天室功能
     
 - 时时音频功能
-    - [MorePeopleVioceRoom](/MorePeopleVioceRoom)——多人语音通话demo，最多支持16人同时在房间内    
+    - [MorePeopleVoiceRoom](/MorePeopleVoiceRoom)——多人语音通话demo，最多支持16人同时在房间内    
 
