@@ -7,9 +7,11 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -122,9 +124,11 @@ public class ChatActivity extends AppCompatActivity {
     private void initOnclickListener() {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View view) {
+                mDotEngine.removeStream(localStream);
+                for (DotStream stream : remoteStreams.values()) {
+                    mDotEngine.removeStream(stream);
+                }
                 mDotEngine.leaveRoom();
-                mDotEngine.onDestroy();
-                finish();
             }
         });
 
@@ -168,6 +172,9 @@ public class ChatActivity extends AppCompatActivity {
         }
 
         @Override public void onLeave(String s) {
+            if (s.equals(mUserName)) {
+                finish();
+            }
 
         }
 
@@ -200,7 +207,7 @@ public class ChatActivity extends AppCompatActivity {
 
                 @Override public void onAudioMuted(DotStream dotStream, boolean b) {
                     int position = findStreamIdPosition(dotStream.getStreamId());
-                    imgList.get(position).setTalking(b);
+                    imgList.get(position).setTalking(!b);
                     mHandler.sendEmptyMessageDelayed(1, 0);
                 }
             });
@@ -235,7 +242,7 @@ public class ChatActivity extends AppCompatActivity {
 
                 @Override public void onAudioMuted(DotStream dotStream, boolean b) {
                     int position = findStreamIdPosition(dotStream.getStreamId());
-                    imgList.get(position).setTalking(b);
+                    imgList.get(position).setTalking(!b);
                     mHandler.sendEmptyMessageDelayed(1, 0);
                 }
             });
@@ -267,6 +274,11 @@ public class ChatActivity extends AppCompatActivity {
         }
 
         return -1;
+    }
+
+    @Override protected void onDestroy() {
+        super.onDestroy();
+        mDotEngine.onDestroy();
     }
 }
 
