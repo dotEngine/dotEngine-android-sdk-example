@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="dotengine-1.0.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/bbc4d02f53f44990cbe69100739c2ee77168bd04/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/bbc4d02f53f44990cbe69100739c2ee77168bd04/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/cc.dot.engine/dotengine/1.0.0/7b77acd36b35feb7dcfc511a30fc66225053d0d9/dotengine-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
