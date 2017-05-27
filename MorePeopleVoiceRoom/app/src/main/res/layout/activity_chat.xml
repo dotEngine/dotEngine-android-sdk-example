@@ -31,9 +31,29 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:visibility="gone"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_alignParentStart="true"/>
+
+
+
+    <FrameLayout
+        android:id="@+id/frame_layout"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/relativeLayout"
-        android:layout_above="@+id/linearLayout"/>
+        android:layout_above="@+id/linearLayout">
+
+
+
+
+
+    </FrameLayout>
+
+
+
+
 
 
     <LinearLayout
