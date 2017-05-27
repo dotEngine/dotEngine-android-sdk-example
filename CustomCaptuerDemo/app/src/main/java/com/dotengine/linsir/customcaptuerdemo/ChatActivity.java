@@ -89,6 +89,8 @@ public class ChatActivity extends AppCompatActivity {
             }
 
             @Override public int stop() {
+                mCameraView.stopCamera();
+
                 return 0;
             }
 
@@ -137,7 +139,6 @@ public class ChatActivity extends AppCompatActivity {
     @Override protected void onDestroy() {
         super.onDestroy();
         mDotEngine.onDestroy();
-        mCameraView.stopCamera();
         mCustomCapture = null;
         mDotEngine = null;
     }
