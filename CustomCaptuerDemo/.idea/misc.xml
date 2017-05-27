@@ -95,12 +95,6 @@
   <component name="ProjectType">
     <option name="id" value="Android" />
   </component>
-  <component name="SvnConfiguration">
-    <configuration>$USER_HOME$/.subversion</configuration>
-    <option name="sshConnectionType" value="PASSWORD" />
-    <option name="sshExecutablePath" value="git@git.oschina.net:tripBuyer/Android_TripBuyer.git" />
-    <option name="sshUserName" value="q476671079@vip.qq.com" />
-  </component>
   <component name="masterDetails">
     <states>
       <state key="Copyright.UI">
