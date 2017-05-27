@@ -1,19 +1,22 @@
 package com.dotengine.linsir.morepeoplevoiceroom;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.util.ArrayList;
+import com.bumptech.glide.Glide;
+
 import java.util.HashMap;
 import java.util.Random;
 
@@ -36,14 +39,13 @@ public class ChatActivity extends AppCompatActivity {
 
     private TextView peoples;
     private Button exit, mute, close_mic, onSpeaker;
-    private RecyclerView recyclerView;
-    private QuickAdapter mAdapter;
 
     private DotEngine mDotEngine;
     private DotStream localStream;
-    private ArrayList<Img> imgList = new ArrayList<Img>();
     private HashMap<String, DotStream> remoteStreams = new HashMap<String, DotStream>();
 
+
+    private FrameLayout frameLayout;
 
     private boolean muteLocalAudio = true;
     private boolean muteRemoteAudio = true;
@@ -56,10 +58,21 @@ public class ChatActivity extends AppCompatActivity {
 
     private int peopleCount = 0;
 
-    private Handler mHandler = new Handler() {
+
+    private Handler mHandler3 = new Handler() {
+
         @Override public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            mAdapter.setNewData(imgList);
+
+            if (msg.what == 1) {
+                flick(msg.getData().getString("user"), true);
+
+            } else {
+                flick(msg.getData().getString("user"), false);
+
+            }
+
+
         }
     };
 
@@ -109,14 +122,15 @@ public class ChatActivity extends AppCompatActivity {
         peoples = (TextView) findViewById(R.id.peoples);
         exit = (Button) findViewById(R.id.exit);
         peoples = (TextView) findViewById(R.id.peoples);
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        //recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mute = (Button) findViewById(R.id.mute);
         close_mic = (Button) findViewById(R.id.close_mic);
         onSpeaker = (Button) findViewById(R.id.tab_speaker);
+        frameLayout = (FrameLayout) findViewById(R.id.frame_layout);
 
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
-        mAdapter = new QuickAdapter();
-        recyclerView.setAdapter(mAdapter);
+        //recyclerView.setLayoutManager(new GridLayoutManager(this, 4));
+        //mAdapter = new QuickAdapter();
+        //recyclerView.setAdapter(mAdapter);
 
     }
 
@@ -190,10 +204,9 @@ public class ChatActivity extends AppCompatActivity {
             peopleCount++;
             mHandler2.sendEmptyMessageDelayed(1, 0);
 
-            final Img img = new Img(dotStream.getStreamId(), BASE_AVATAR_URL + dotStream.getStreamId(), true);
-            imgList.add(img);
-            mHandler.sendEmptyMessageDelayed(1, 0);
             localStream = dotStream;
+
+            addVideo(dotStream.getStreamId());
 
 
             dotStream.setStreamListener(new DotStreamListener() {
@@ -206,28 +219,39 @@ public class ChatActivity extends AppCompatActivity {
                 }
 
                 @Override public void onAudioMuted(DotStream dotStream, boolean b) {
-                    int position = findStreamIdPosition(dotStream.getStreamId());
-                    imgList.get(position).setTalking(!b);
-                    mHandler.sendEmptyMessageDelayed(1, 0);
+
+                }
+
+                @Override public void onAudioLevel(DotStream dotStream, int i) {
+                    Message message = new Message();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("user", dotStream.getStreamId());
+                    message.what = 1;
+                    message.setData(bundle);
+                    mHandler3.sendMessageDelayed(message, 0);
+
+
+                    Message message2 = new Message();
+                    Bundle bundle2 = new Bundle();
+                    bundle2.putString("user", dotStream.getStreamId());
+                    message2.what = 2;
+                    message2.setData(bundle2);
+                    mHandler3.sendMessageDelayed(message2, 250);
+
+
                 }
             });
         }
 
         @Override public void onRemoveLocalStream(DotStream dotStream) {
-            int position = findStreamIdPosition(dotStream.getStreamId());
-            if (position != -1) {
-                imgList.remove(position);
-                mHandler.sendEmptyMessageDelayed(1, 0);
-            }
         }
 
         @Override public void onAddRemoteStream(DotStream dotStream) {
             peopleCount++;
             mHandler2.sendEmptyMessageDelayed(1, 0);
 
-            Img img = new Img(dotStream.getStreamId(), BASE_AVATAR_URL + dotStream.getStreamId(), true);
-            imgList.add(img);
-            mHandler.sendEmptyMessageDelayed(1, 0);
+            addVideo(dotStream.getStreamId());
+
 
             remoteStreams.put(dotStream.getStreamId(), dotStream);
 
@@ -241,10 +265,28 @@ public class ChatActivity extends AppCompatActivity {
                 }
 
                 @Override public void onAudioMuted(DotStream dotStream, boolean b) {
-                    int position = findStreamIdPosition(dotStream.getStreamId());
-                    imgList.get(position).setTalking(!b);
-                    mHandler.sendEmptyMessageDelayed(1, 0);
+
                 }
+
+                @Override public void onAudioLevel(DotStream dotStream, int i) {
+                    Message message = new Message();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("user", dotStream.getStreamId());
+                    message.what = 1;
+                    message.setData(bundle);
+                    mHandler3.sendMessageDelayed(message, 0);
+
+
+                    Message message2 = new Message();
+                    Bundle bundle2 = new Bundle();
+                    bundle2.putString("user", dotStream.getStreamId());
+                    message2.what = 2;
+                    message2.setData(bundle2);
+                    mHandler3.sendMessageDelayed(message2, 250);
+
+
+                }
+
             });
         }
 
@@ -252,11 +294,6 @@ public class ChatActivity extends AppCompatActivity {
             peopleCount--;
             mHandler2.sendEmptyMessageDelayed(1, 0);
 
-            int position = findStreamIdPosition(dotStream.getStreamId());
-            if (position != -1) {
-                imgList.remove(position);
-                mHandler.sendEmptyMessageDelayed(1, 0);
-            }
             remoteStreams.remove(dotStream.getStreamId());
         }
 
@@ -266,20 +303,67 @@ public class ChatActivity extends AppCompatActivity {
     };
 
 
-    private int findStreamIdPosition(String id) {
-        for (int i = 0; i < imgList.size(); i++) {
-            if (imgList.get(i).getName().equals(id)) {
-                return i;
-            }
-        }
-
-        return -1;
-    }
-
     @Override protected void onDestroy() {
         super.onDestroy();
         mDotEngine.onDestroy();
     }
+
+
+    private void addVideo(String user) {
+
+        DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
+        int pw = (int) (displayMetrics.widthPixels / 4.0f);
+
+        RelativeLayout relativeLayout = new RelativeLayout(this);
+
+        ImageView imgView = new ImageView(this);
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(pw, pw);
+        relativeLayout.addView(imgView, layoutParams);
+        Glide.with(this).load(BASE_AVATAR_URL + user).fitCenter().error(Color.RED).into(imgView);
+
+
+        ImageView imageView2 = new ImageView(this);
+        imageView2.setBackgroundColor(Color.GREEN);
+        RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(20, 20);
+        relativeLayout.addView(imageView2, layoutParams2);
+
+        FrameLayout.LayoutParams layoutParams3 = new FrameLayout.LayoutParams(pw, pw);
+
+        int size = frameLayout.getChildCount();
+
+        layoutParams3.leftMargin = (size % 4) * pw;
+        layoutParams3.topMargin = (size / 4) * pw;
+
+        relativeLayout.setTag(user);
+        frameLayout.addView(relativeLayout, layoutParams3);
+
+    }
+
+
+    private void flick(String user, boolean light) {
+
+
+        int size = frameLayout.getChildCount();
+        for (int i = 0; i < size; i++) {
+
+            if (frameLayout.getChildAt(i).getTag().equals(user)) {
+                RelativeLayout relativeLayout = (RelativeLayout) frameLayout.getChildAt(i);
+
+
+                if (light) {
+                    relativeLayout.getChildAt(1).setBackgroundColor(Color.GREEN);
+                } else {
+                    relativeLayout.getChildAt(1).setBackgroundColor(Color.WHITE);
+
+                }
+
+            }
+
+        }
+
+    }
+
+
 }
 
 
