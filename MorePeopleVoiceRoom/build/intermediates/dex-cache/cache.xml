@@ -3,39 +3,30 @@
 
     <item
         is-multidex="true"
-        jar="/Users/mac/WorkSpace/Android3/RCTWebRTCDemo/MorePeopleVoiceRoom/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="/Users/mac/.android/build-cache/439eb644b02bf506349b6d73e9e9c35f912d4dc8/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="332cea48226b1b37689141bb112f29b74c503d1d">
-        <dex dex="/Users/mac/WorkSpace/Android3/RCTWebRTCDemo/MorePeopleVoiceRoom/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_c0f10b3ad58bff2983a1043bc7b07666a930c982/classes.dex" />
+        sha1="5dbea1a141c9e5f5c682c3503a85ddba8f145f6c">
+        <dex dex="/Users/mac/WorkSpace/DotEngine/dotEngine-android-sdk-example/MorePeopleVoiceRoom/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_1c70cfe15837e9bb60271585e10fe41097890947/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/mac/WorkSpace/Android3/RCTWebRTCDemo/MorePeopleVoiceRoom/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="/Users/mac/WorkSpace/DotEngine/dotEngine-android-sdk-example/MorePeopleVoiceRoom/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
-        <dex dex="/Users/mac/WorkSpace/Android3/RCTWebRTCDemo/MorePeopleVoiceRoom/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_3a59619bc1488ac07ed2237ec66ce668342b507b/classes.dex" />
+        <dex dex="/Users/mac/WorkSpace/DotEngine/dotEngine-android-sdk-example/MorePeopleVoiceRoom/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_c15ae90a3e6086ec12a718a0f29580427503ee0e/classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/Users/mac/.android/build-cache/6048d8e712396789b1babd43f163558e02f44878/output/jars/classes.jar"
+        jar="/Users/mac/WorkSpace/DotEngine/dotEngine-android-sdk-example/MorePeopleVoiceRoom/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="67e14396d2b0412c0321d19ffdbda347cd022e23">
-        <dex dex="/Users/mac/WorkSpace/Android3/RCTWebRTCDemo/MorePeopleVoiceRoom/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_e19a9263a2e9f2f1f029a5806ba3905f9996d515/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="/Users/mac/.android/build-cache/2f5cab0ac6be8d42b338691ee2a0b5d8b97d46b6/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="1f0fc9db38baa048e9e58901e75f76569b013d1c">
-        <dex dex="/Users/mac/WorkSpace/Android3/RCTWebRTCDemo/MorePeopleVoiceRoom/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_55cefb505d7c674161f5ed29a0af9880158407e4/classes.dex" />
+        sha1="b00b0491866854aef49ea42a7b577e4a0e948a80">
+        <dex dex="/Users/mac/WorkSpace/DotEngine/dotEngine-android-sdk-example/MorePeopleVoiceRoom/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_e719884929b17516d970fa483e70922e074014b5/classes.dex" />
     </item>
 
 </items>
