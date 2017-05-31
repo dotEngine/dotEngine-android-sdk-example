@@ -36,5 +36,10 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.5.0'
 
     compile 'com.beardedhen:androidbootstrap:2.0.0'
-    compile(name:'DotEngine-debug', ext:'aar')
+    //compile(name:'DotEngine-debug', ext:'aar')
+
+    compile 'cc.dot.engine:dotengine:1.0.4'
+
+    compile 'pub.devrel:easypermissions:0.4.0'
+
 }

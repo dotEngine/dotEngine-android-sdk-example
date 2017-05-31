@@ -102,6 +102,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 25 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="easypermissions-0.4.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="runner-0.5" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="espresso-idling-resource-2.2.2" level="project" />
     <orderEntry type="library" exported="" name="constraint-layout-1.0.2" level="project" />
@@ -110,8 +111,8 @@
     <orderEntry type="library" exported="" name="androidbootstrap-2.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-core-ui-25.3.1" level="project" />
     <orderEntry type="library" exported="" name="core-0.9.4.4" level="project" />
-    <orderEntry type="library" exported="" name="dotengine-1.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-v13-25.3.1" level="project" />
+    <orderEntry type="library" exported="" name="dotengine-1.0.4" level="project" />
     <orderEntry type="library" exported="" name="library-1.4.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="jsr305-2.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-core-utils-25.3.1" level="project" />

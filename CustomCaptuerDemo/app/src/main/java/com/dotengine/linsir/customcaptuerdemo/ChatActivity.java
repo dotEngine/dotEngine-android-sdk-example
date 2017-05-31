@@ -1,5 +1,6 @@
 package com.dotengine.linsir.customcaptuerdemo;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -8,10 +9,12 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.dotengine.linsir.loglibrary.LinLog;
 import com.dotengine.linsir.loglibrary.LinToast;
 
+import java.util.List;
 import java.util.Random;
 
 import butterknife.BindView;
@@ -28,16 +31,17 @@ import cc.dot.engine.listener.TokenCallback;
 import cc.dot.engine.type.DotEngineErrorType;
 import cc.dot.engine.type.DotEngineStatus;
 import cc.dot.engine.type.DotEngineWarnType;
+import pub.devrel.easypermissions.EasyPermissions;
 
 import static cc.dot.engine.capturer.VideoFrameBuffer.VideoFrameType.NV21_TYPE;
 
 /**
- *  Created by linSir 
- *  date at 2017/5/26.
- *  describe:      
+ * Created by linSir
+ * date at 2017/5/26.
+ * describe:
  */
 
-public class ChatActivity extends AppCompatActivity {
+public class ChatActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks{
 
 
     private static final int VIDEO_WIDTH = 240;
@@ -49,13 +53,29 @@ public class ChatActivity extends AppCompatActivity {
     private String mRoomName;
 
 
-    @BindView(R.id.frame_layout) FrameLayout videoLayout;
-    @BindView(R.id.camera_view) CameraView mCameraView;
+    @BindView(R.id.frame_layout)
+    FrameLayout videoLayout;
+    @BindView(R.id.camera_view)
+    CameraView mCameraView;
 
-    @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_activity);
         ButterKnife.bind(this);
+
+
+        String[] perms = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CALL_PHONE,
+                Manifest.permission.ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_WIFI_STATE, Manifest.permission.CAMERA};
+        if (EasyPermissions.hasPermissions(this, perms)) {//检查是否获取该权限
+            Log.e("lin", "===lin===> 拥有权限");
+        } else {
+
+            Log.e("lin", "===lin===> 正在申请权限");
+
+            EasyPermissions.requestPermissions(this, "必要的权限", 0, perms);
+        }
+
 
         mRoomName = getIntent().getExtras().getString("roomName");
 
@@ -70,7 +90,8 @@ public class ChatActivity extends AppCompatActivity {
 
 
         mCameraView.setPreviewCallback(new CameraView.PreviewCallback() {
-            @Override public void onGetYuvFrame(byte[] data) {
+            @Override
+            public void onGetYuvFrame(byte[] data) {
 
                 VideoFrameBuffer videoFrameBuffer = new VideoFrameBuffer(data, VIDEO_WIDTH, VIDEO_HEIGHT, NV21_TYPE);
                 mCustomCapture.onByteBufferFrame(videoFrameBuffer, 270);
@@ -80,33 +101,40 @@ public class ChatActivity extends AppCompatActivity {
         });
 
         mCustomCapture = new DotCustomCapturer() {
-            @Override public void init() {
+            @Override
+            public void init() {
 
             }
 
-            @Override public int start() {
+            @Override
+            public int start() {
                 return 0;
             }
 
-            @Override public int stop() {
+            @Override
+            public int stop() {
                 mCameraView.stopCamera();
 
                 return 0;
             }
 
-            @Override public void destroy() {
+            @Override
+            public void destroy() {
 
             }
 
-            @Override public boolean isCaptureStarted() {
+            @Override
+            public boolean isCaptureStarted() {
                 return false;
             }
 
-            @Override public CaptureSettings getCaptureSettings() {
+            @Override
+            public CaptureSettings getCaptureSettings() {
                 return null;
             }
 
-            @Override public void onByteBufferFrame(VideoFrameBuffer videoFrameBuffer, int rotation) {
+            @Override
+            public void onByteBufferFrame(VideoFrameBuffer videoFrameBuffer, int rotation) {
                 super.onByteBufferFrame(videoFrameBuffer, rotation);
             }
         };
@@ -114,7 +142,8 @@ public class ChatActivity extends AppCompatActivity {
 
     }
 
-    @OnClick(R.id.join_room) public void onJoinRoomClicked() {
+    @OnClick(R.id.join_room)
+    public void onJoinRoomClicked() {
         DotEngine.generateTestToken(MyApplication.APP_KEY, MyApplication.APP_SECRET, mRoomName, mUserName, new TokenCallback() {
             @Override
             public void onSuccess(String token) {
@@ -131,12 +160,14 @@ public class ChatActivity extends AppCompatActivity {
         });
     }
 
-    @OnClick(R.id.leave_room) public void onLeaveRoomClicked() {
+    @OnClick(R.id.leave_room)
+    public void onLeaveRoomClicked() {
         mDotEngine.leaveRoom();
         finish();
     }
 
-    @Override protected void onDestroy() {
+    @Override
+    protected void onDestroy() {
         super.onDestroy();
         mDotEngine.onDestroy();
         mCustomCapture = null;
@@ -145,7 +176,8 @@ public class ChatActivity extends AppCompatActivity {
 
 
     private DotEngineListener dotEngineListener = new DotEngineListener() {
-        @Override public void onJoined(String userId) {
+        @Override
+        public void onJoined(String userId) {
             if (userId.equalsIgnoreCase(mUserName)) {
                 mCameraView.startCamera();
 
@@ -158,26 +190,29 @@ public class ChatActivity extends AppCompatActivity {
 
         }
 
-        @Override public void onLeave(String userId) {
+        @Override
+        public void onLeave(String userId) {
         }
 
-        @Override public void onOccurError(DotEngineErrorType errorCode) {
+        @Override
+        public void onOccurError(DotEngineErrorType errorCode) {
 
         }
 
-        @Override public void onWarning(DotEngineWarnType warnCode) {
+        @Override
+        public void onWarning(DotEngineWarnType warnCode) {
 
         }
 
-        @Override public void onAddLocalStream(DotStream stream) {
+        @Override
+        public void onAddLocalStream(DotStream stream) {
             addVideo(stream.getStreamId(), stream.getDotView());
 
 
-
-
         }
 
-        @Override public void onRemoveLocalStream(DotStream stream) {
+        @Override
+        public void onRemoveLocalStream(DotStream stream) {
             DotView view = stream.getDotView();
 
             videoLayout.removeView(view);
@@ -185,30 +220,36 @@ public class ChatActivity extends AppCompatActivity {
             updateFrameLayout();
         }
 
-        @Override public void onAddRemoteStream(DotStream stream) {
+        @Override
+        public void onAddRemoteStream(DotStream stream) {
 
             addVideo(stream.getStreamId(), stream.getDotView());
 
 
             stream.setStreamListener(new DotStreamListener() {
-                @Override public void onCameraError(DotStream stream, String error) {
+                @Override
+                public void onCameraError(DotStream stream, String error) {
 
                 }
 
-                @Override public void onVideoMuted(DotStream stream, boolean muted) {
+                @Override
+                public void onVideoMuted(DotStream stream, boolean muted) {
                 }
 
-                @Override public void onAudioMuted(DotStream stream, boolean muted) {
+                @Override
+                public void onAudioMuted(DotStream stream, boolean muted) {
                 }
 
-                @Override public void onAudioLevel(DotStream stream, int audioLevel) {
+                @Override
+                public void onAudioLevel(DotStream stream, int audioLevel) {
                 }
             });
 
 
         }
 
-        @Override public void onRemoveRemoteStream(DotStream stream) {
+        @Override
+        public void onRemoveRemoteStream(DotStream stream) {
             DotView view = stream.getDotView();
 
             videoLayout.removeView(view);
@@ -216,7 +257,8 @@ public class ChatActivity extends AppCompatActivity {
             updateFrameLayout();
         }
 
-        @Override public void onStateChange(DotEngineStatus status) {
+        @Override
+        public void onStateChange(DotEngineStatus status) {
 
         }
     };
@@ -269,6 +311,18 @@ public class ChatActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> perms) {
+        Log.e("lin", "===获取成功的权限" + perms);
+
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> perms) {
+        Log.e("lin", "===获取失败的权限" + perms);
+        Toast.makeText(this,"权限申请异常",Toast.LENGTH_SHORT).show();
+
+    }
 }
 
 
