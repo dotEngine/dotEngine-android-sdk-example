@@ -1,12 +1,15 @@
 <component name="libraryTable">
   <library name="support-media-compat-25.3.1">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.android/build-cache/fde51e2a19142a24f3ed41d8f8cd7456b632f9bc/output/annotations.zip!/" />
+    </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.android/build-cache/b466cc4d81d5a1522fd82465dbaa99f4bdc62148/output/res" />
-      <root url="jar://$USER_HOME$/.android/build-cache/b466cc4d81d5a1522fd82465dbaa99f4bdc62148/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/fde51e2a19142a24f3ed41d8f8cd7456b632f9bc/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/fde51e2a19142a24f3ed41d8f8cd7456b632f9bc/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/Library/Android/sdk/extras/android/m2repository/com/android/support/support-media-compat/25.3.1/support-media-compat-25.3.1-sources.jar!/" />
+      <root url="jar://$USER_HOME$/Downloads/adt-bundle-mac-x86_64-20140702/sdk/extras/android/m2repository/com/android/support/support-media-compat/25.3.1/support-media-compat-25.3.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

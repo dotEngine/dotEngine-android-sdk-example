@@ -11,8 +11,6 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.afollestad.materialdialogs.MaterialDialog;
-import com.dotengine.linsir.loglibrary.LinLog;
-import com.dotengine.linsir.loglibrary.LinToast;
 
 import java.util.Random;
 
@@ -125,7 +123,6 @@ public class ChatActivity extends AppCompatActivity {
                 handler.post(new Runnable() {
                     @Override public void run() {
                         String type = getIntent().getExtras().getString("type");
-                        LinLog.lLog("type   " + type);
                         mDotEngine.joinRoom(token);
                     }
                 });
@@ -134,7 +131,6 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onFailure() {
 
-                LinToast.showToast("获取token失败");
             }
         });
     }
